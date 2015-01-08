@@ -52,12 +52,11 @@ exports.isURLArchived = function(url, cb) {
 exports.downloadUrls = function(cb) {
   exports.readListOfUrls(function(siteNames) {
     _.each(siteNames, function(site) {
-      http.get('http://' + site, function(res) {
+      http.get(site, function(res) {
         // html = res.body
         //write html to new file in sites/ with filename matching url
         // remove site from sites.txt list
-        fs.appendFile(exports.paths.logs, res.buffer.toString());
-      }).on('error', function(err) {0
+      }).on('error', function(err) {
         fs.appendFile(exports.paths.logs, err.message);
         exports.addUrlToList(site);
       });
