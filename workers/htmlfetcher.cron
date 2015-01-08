@@ -1,1 +1,0 @@
-*/1 * * * * echo "running" && node /Users/clark/Code/hack_reactor/sprints/2014-12-web-historian/workers/htmlfetcher.js
