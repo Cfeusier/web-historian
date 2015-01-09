@@ -34,7 +34,8 @@ describe("Node Server Request Listener Function", function() {
         expect(res._responseCode).to.equal(200);
         expect(res._data.toString().match(/<input/)).to.be.ok; // the resulting html should have an input tag
         done();
-    });
+      }
+    );
   });
 
   it("Should answer GET requests for archived websites", function(done) {
@@ -61,7 +62,8 @@ describe("Node Server Request Listener Function", function() {
         // Delete the file from the archives.
         fs.unlinkSync(fixturePath);
         done();
-    });
+      }
+    );
   });
 
   it("Should append submitted sites to 'sites.txt'", function(done) {
@@ -79,7 +81,8 @@ describe("Node Server Request Listener Function", function() {
         expect(res._responseCode).to.equal(302);
         expect(fileContents).to.equal(url + "\n");
         done();
-    });
+      }
+    );
   });
 
   it("Should 404 when asked for a nonexistent file", function(done) {
@@ -92,7 +95,8 @@ describe("Node Server Request Listener Function", function() {
       function(){
         expect(res._responseCode).to.equal(404);
         done();
-    });
+      }
+    );
   });
 
 });
@@ -117,7 +121,7 @@ describe("html fetcher helpers", function(){
       function(){
         expect(resultArray).to.deep.equal(urlArray);
         done();
-    });
+      });
   });
 
   it("should have a 'downloadUrls' function", function(){
